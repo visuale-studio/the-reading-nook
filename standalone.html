@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>standalone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Tenor+Sans&display=swap" rel="stylesheet">
+  <style>
+    body { background-color: #d4edda; font-family: 'Cormorant Garamond', serif; text-align: center; padding-top: 80px; margin: 0; }
+    h1 { color: #4a5c4a; font-weight: 300; letter-spacing: 8px; font-size: 36px; }
+    .subtitle { color: #6b8c6b; font-style: italic; font-size: 16px; letter-spacing: 2px; }
+    hr { width: 15%; border: none; border-top: 1px solid #a8c8a8; margin: 30px auto; }
+    .nav { display: flex; justify-content: center; gap: 40px; margin: 30px auto; }
+    .nav a { color: #6b8c6b; text-decoration: none; font-family: 'Tenor Sans', sans-serif; font-size: 11px; letter-spacing: 3px; transition: color 0.3s ease; }
+    .nav a:hover { color: #4a5c4a; }
+    .genre-button { width: 150px; height: 150px; background-color: #ffb7ce; color: #5c4a4a; border: 1px solid #f99ab5; font-size: 11px; letter-spacing: 2px; font-family: 'Tenor Sans', sans-serif; cursor: pointer; margin: 15px; transition: all 0.3s ease; }
+    .genre-button:hover { background-color: #f99ab5; }
+    .back { text-decoration: none; color: #6b8c6b; font-family: 'Tenor Sans', sans-serif; font-size: 11px; letter-spacing: 2px; }
+    .music-bar { position: fixed; bottom: 20px; right: 20px; background-color: #f0faf0; border: 1px solid #a8c8a8; padding: 10px 20px; font-family: 'Tenor Sans', sans-serif; font-size: 11px; letter-spacing: 2px; color: #4a5c4a; cursor: pointer; transition: all 0.3s ease; }
+    .music-bar:hover { background-color: #4a5c4a; color: #f0faf0; }
+  </style>
+</head>
+<body>
+
+  <h1>STAND ALONE</h1>
+  <p class="subtitle">choose your genre</p>
+
+  <nav class="nav">
+    <a href="the reading nook.html">HOME</a>
+    <a href="page 2 for reading nook.html">CATEGORIES</a>
+    <a href="community-reviews.html">COMMUNITY</a>
+  </nav>
+
+  <hr>
+
+  <div style="margin-top: 50px;">
+    <a href="standalone-mysterycrime.html" style="text-decoration: none;">
+      <button class="genre-button">MYSTERY /<br>CRIME</button>
+    </a>
+    <a href="standalone-romcom.html" style="text-decoration: none;">
+      <button class="genre-button">ROMANTIC<br>COMEDY</button>
+    </a>
+    <a href="standalone-fantasydystopian.html" style="text-decoration: none;">
+      <button class="genre-button">FANTASY /<br>DYSTOPIAN</button>
+    </a>
+    <a href="standalone-nonfiction.html" style="text-decoration: none;">
+      <button class="genre-button">NONFICTION</button>
+    </a>
+  </div>
+
+  <hr style="margin-top: 60px;">
+  <a href="page 2 for reading nook.html" class="back">← BACK</a>
+
+  <audio id="bgm" loop><source src="bgm.mp3" type="audio/mpeg"></audio>
+  <div class="music-bar" onclick="toggleMusic()"><span id="music-label">♪ PLAY MUSIC</span></div>
+  <script>
+    const audio = document.getElementById('bgm'); let playing = false;
+    function toggleMusic() { if (playing) { audio.pause(); document.getElementById('music-label').textContent = '♪ PLAY MUSIC'; playing = false; } else { audio.play(); document.getElementById('music-label').textContent = '♫ PAUSE MUSIC'; playing = true; } }
+  </script>
+
+</body>
+</html>

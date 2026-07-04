@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>choose your category</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Tenor+Sans&display=swap" rel="stylesheet">
+  <style>
+    body { background-color: #f5e6a8; font-family: 'Cormorant Garamond', serif; text-align: center; padding-top: 80px; margin: 0; }
+    h1 { color: #5c5440; font-weight: 300; letter-spacing: 8px; font-size: 36px; }
+    .subtitle { color: #8a7a50; font-style: italic; font-size: 16px; letter-spacing: 2px; }
+    hr { width: 15%; border: none; border-top: 1px solid #c9b97a; margin: 30px auto; }
+    .nav { display: flex; justify-content: center; gap: 40px; margin: 30px auto; }
+    .nav a { color: #8a7a50; text-decoration: none; font-family: 'Tenor Sans', sans-serif; font-size: 11px; letter-spacing: 3px; transition: color 0.3s ease; }
+    .nav a:hover { color: #5c5440; }
+    .category-button { width: 160px; height: 160px; background-color: #b8d4e3; color: #5c5440; border: 1px solid #9bc0d6; font-size: 12px; letter-spacing: 3px; font-family: 'Tenor Sans', sans-serif; cursor: pointer; margin: 0 20px; transition: all 0.3s ease; }
+    .category-button:hover { background-color: #9bc0d6; }
+    .music-bar { position: fixed; bottom: 20px; right: 20px; background-color: #fdf5e0; border: 1px solid #c9b97a; padding: 10px 20px; font-family: 'Tenor Sans', sans-serif; font-size: 11px; letter-spacing: 2px; color: #5c5440; cursor: pointer; transition: all 0.3s ease; }
+    .music-bar:hover { background-color: #5c5440; color: #fdf5e0; }
+  </style>
+</head>
+<body>
+
+  <h1>CHOOSE YOUR CATEGORY</h1>
+  <p class="subtitle">where would you like to go?</p>
+
+  <nav class="nav">
+    <a href="the reading nook.html">HOME</a>
+    <a href="community-reviews.html">COMMUNITY</a>
+  </nav>
+
+  <hr>
+
+  <div style="margin-top: 60px;">
+    <a href="series.html" style="text-decoration: none;">
+      <button class="category-button">SERIES</button>
+    </a>
+    <a href="standalone.html" style="text-decoration: none;">
+      <button class="category-button">STAND ALONE</button>
+    </a>
+  </div>
+
+  <hr style="margin-top: 80px;">
+
+  <audio id="bgm" loop>
+    <source src="bgm.mp3" type="audio/mpeg">
+  </audio>
+  <div class="music-bar" onclick="toggleMusic()">
+    <span id="music-label">♪ PLAY MUSIC</span>
+  </div>
+  <script>
+    const audio = document.getElementById('bgm');
+    let playing = false;
+    function toggleMusic() {
+      if (playing) { audio.pause(); document.getElementById('music-label').textContent = '♪ PLAY MUSIC'; playing = false; }
+      else { audio.play(); document.getElementById('music-label').textContent = '♫ PAUSE MUSIC'; playing = true; }
+    }
+  </script>
+
+</body>
+</html>

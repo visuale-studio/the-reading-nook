@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>community reviews</title>
+</head>
+<body style="background-color: #f7dde3; font-family: 'Georgia', serif; text-align: center; padding-top: 80px;">
+
+  <h1 style="color: #5c4a4a; font-weight: normal; letter-spacing: 4px; font-size: 28px;">COMMUNITY REVIEWS</h1>
+  <p style="color: #8a7373; font-style: italic; font-size: 14px;">what our readers are saying</p>
+
+  <hr style="width: 15%; border: none; border-top: 1px solid #d8b8c0; margin: 30px auto;">
+
+  <!-- SUBMIT FORM -->
+  <div style="max-width: 600px; margin: 40px auto; text-align: left; padding: 0 40px;">
+
+    <p style="color: #5c4a4a; font-size: 13px; letter-spacing: 2px; margin-bottom: 8px;">YOUR NAME</p>
+    <input id="name" type="text" placeholder="enter your name" style="width: 100%; padding: 12px; font-family: 'Georgia', serif; font-size: 14px; border: 1px solid #d8b8c0; background-color: #fdf0f3; color: #5c4a4a; box-sizing: border-box; margin-bottom: 24px;">
+
+    <p style="color: #5c4a4a; font-size: 13px; letter-spacing: 2px; margin-bottom: 8px;">BOOK NAME</p>
+    <input id="book" type="text" placeholder="enter book title" style="width: 100%; padding: 12px; font-family: 'Georgia', serif; font-size: 14px; border: 1px solid #d8b8c0; background-color: #fdf0f3; color: #5c4a4a; box-sizing: border-box; margin-bottom: 24px;">
+
+    <p style="color: #5c4a4a; font-size: 13px; letter-spacing: 2px; margin-bottom: 8px;">YOUR RATING</p>
+    <select id="rating" style="width: 100%; padding: 12px; font-family: 'Georgia', serif; font-size: 14px; border: 1px solid #d8b8c0; background-color: #fdf0f3; color: #5c4a4a; box-sizing: border-box; margin-bottom: 24px;">
+      <option value="">select a rating</option>
+      <option>10 / 10</option>
+      <option>9 / 10</option>
+      <option>8 / 10</option>
+      <option>7 / 10</option>
+      <option>6 / 10</option>
+      <option>5 / 10</option>
+      <option>4 / 10</option>
+      <option>3 / 10</option>
+      <option>2 / 10</option>
+      <option>1 / 10</option>
+    </select>
+
+    <p style="color: #5c4a4a; font-size: 13px; letter-spacing: 2px; margin-bottom: 8px;">YOUR REVIEW</p>
+    <textarea id="review" placeholder="write your review here..." style="width: 100%; padding: 12px; font-family: 'Georgia', serif; font-size: 14px; border: 1px solid #d8b8c0; background-color: #fdf0f3; color: #5c4a4a; box-sizing: border-box; height: 150px; margin-bottom: 24px; resize: vertical;"></textarea>
+
+    <p style="color: #5c4a4a; font-size: 13px; letter-spacing: 2px; margin-bottom: 8px;">PERSONAL THOUGHTS</p>
+    <textarea id="thoughts" placeholder="anything else you'd like to share..." style="width: 100%; padding: 12px; font-family: 'Georgia', serif; font-size: 14px; border: 1px solid #d8b8c0; background-color: #fdf0f3; color: #5c4a4a; box-sizing: border-box; height: 150px; margin-bottom: 24px; resize: vertical;"></textarea>
+
+    <p style="color: #5c4a4a; font-size: 13px; letter-spacing: 2px; margin-bottom: 8px;">WOULD YOU RECOMMEND THIS BOOK?</p>
+    <select id="recommend" style="width: 100%; padding: 12px; font-family: 'Georgia', serif; font-size: 14px; border: 1px solid #d8b8c0; background-color: #fdf0f3; color: #5c4a4a; box-sizing: border-box; margin-bottom: 40px;">
+      <option value="">select an option</option>
+      <option>absolutely!</option>
+      <option>yes, with reservations</option>
+      <option>not really</option>
+      <option>definitely not</option>
+    </select>
+
+    <div style="text-align: center;">
+      <button onclick="submitReview()" style="width: 200px; height: 50px; background-color: transparent; color: #5c4a4a; border: 1px solid #5c4a4a; font-size: 12px; letter-spacing: 2px; font-family: 'Georgia', serif; cursor: pointer;">
+        SUBMIT REVIEW
+      </button>
+    </div>
+
+  </div>
+
+  <hr style="width: 15%; border: none; border-top: 1px solid #d8b8c0; margin: 60px auto 20px;">
+
+  <!-- REVIEWS DISPLAY -->
+  <h2 style="color: #5c4a4a; font-weight: normal; letter-spacing: 4px; font-size: 22px; margin-top: 40px;">READER REVIEWS</h2>
+  <p style="color: #8a7373; font-style: italic; font-size: 14px;">from our little community of readers</p>
+
+  <div id="reviews-container" style="max-width: 600px; margin: 40px auto; padding: 0 40px;">
+    <p id="no-reviews" style="color: #8a7373; font-style: italic; font-size: 14px;">no reviews yet — be the first to share your thoughts!</p>
+  </div>
+
+  <hr style="width: 15%; border: none; border-top: 1px solid #d8b8c0; margin: 60px auto 20px;">
+  <a href="the reading nook.html" style="text-decoration: none; color: #8a7373; font-size: 12px; letter-spacing: 2px;">← BACK TO HOME</a>
+
+  <script>
+    function submitReview() {
+      const name = document.getElementById('name').value.trim();
+      const book = document.getElementById('book').value.trim();
+      const rating = document.getElementById('rating').value;
+      const review = document.getElementById('review').value.trim();
+      const thoughts = document.getElementById('thoughts').value.trim();
+      const recommend = document.getElementById('recommend').value;
+
+      if (!name || !book || !rating || !review || !thoughts || !recommend) {
+        alert('please fill in all fields before submitting!');
+        return;
+      }
+
+      document.getElementById('no-reviews').style.display = 'none';
+
+      const container = document.getElementById('reviews-container');
+
+      const card = document.createElement('div');
+      card.style.cssText = 'background-color: #fdf0f3; border: 1px solid #d8b8c0; padding: 30px; margin-bottom: 30px; text-align: left;';
+
+      card.innerHTML = `
+        <p style="color: #5c4a4a; font-size: 13px; letter-spacing: 2px; margin: 0 0 4px 0;">${book.toUpperCase()}</p>
+        <p style="color: #8a7373; font-style: italic; font-size: 12px; margin: 0 0 16px 0;">reviewed by ${name} · ${rating} · ${recommend}</p>
+        <hr style="border: none; border-top: 1px solid #d8b8c0; margin-bottom: 16px;">
+        <p style="color: #5c4a4a; font-size: 13px; letter-spacing: 1px; margin-bottom: 6px;">REVIEW</p>
+        <p style="color: #5c4a4a; font-size: 14px; line-height: 1.8; margin-bottom: 20px;">${review}</p>
+        <p style="color: #5c4a4a; font-size: 13px; letter-spacing: 1px; margin-bottom: 6px;">PERSONAL THOUGHTS</p>
+        <p style="color: #5c4a4a; font-size: 14px; line-height: 1.8;">${thoughts}</p>
+      `;
+
+      container.appendChild(card);
+
+      document.getElementById('name').value = '';
+      document.getElementById('book').value = '';
+      document.getElementById('rating').value = '';
+      document.getElementById('review').value = '';
+      document.getElementById('thoughts').value = '';
+      document.getElementById('recommend').value = '';
+    }
+  </script>
+
+</body>
+</html>

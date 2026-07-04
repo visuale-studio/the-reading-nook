@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>the reading nook</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Tenor+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f7dde3;
+      font-family: 'Cormorant Garamond', serif;
+      text-align: center;
+      padding-top: 80px;
+      margin: 0;
+    }
+
+    h1 {
+      color: #5c4a4a;
+      font-weight: 300;
+      letter-spacing: 8px;
+      font-size: 42px;
+      margin-bottom: 0;
+    }
+
+    .subtitle {
+      color: #8a7373;
+      font-style: italic;
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-top: 10px;
+    }
+
+    hr {
+      width: 15%;
+      border: none;
+      border-top: 1px solid #d8b8c0;
+      margin: 30px auto;
+    }
+
+    .currently-reading {
+      color: #5c4a4a;
+      font-size: 13px;
+      letter-spacing: 3px;
+    }
+
+    .main-button {
+      background-color: transparent;
+      color: #5c4a4a;
+      border: 1px solid #5c4a4a;
+      padding: 12px 36px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      font-family: 'Tenor Sans', sans-serif;
+      margin-top: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .main-button:hover {
+      background-color: #5c4a4a;
+      color: #f7dde3;
+    }
+
+    .music-bar {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #fdf0f3;
+      border: 1px solid #d8b8c0;
+      padding: 10px 20px;
+      font-family: 'Tenor Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #5c4a4a;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .music-bar:hover {
+      background-color: #5c4a4a;
+      color: #fdf0f3;
+    }
+
+    .footer {
+      color: #a98e8e;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-top: 10px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 30px auto;
+    }
+
+    .nav a {
+      color: #8a7373;
+      text-decoration: none;
+      font-family: 'Tenor Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #5c4a4a;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>THE READING NOOK</h1>
+  <p class="subtitle">a quiet place for words</p>
+
+  <nav class="nav">
+    <a href="page 2 for reading nook.html">BOOKS</a>
+    <a href="community-reviews.html">COMMUNITY</a>
+    <a href="the reading nook.html">HOME</a>
+  </nav>
+
+  <hr>
+
+  <p style="color: #8a7373; font-style: italic; font-size: 16px; max-width: 600px; margin: 40px auto; line-height: 2; padding: 0 40px;">
+    welcome to the reading nook — a cozy corner of the internet made by two friends who love books a little too much.
+  </p>
+
+  <hr>
+
+  <p class="currently-reading">currently reading</p>
+
+  <a href="page 2 for reading nook.html" style="text-decoration: none;">
+    <button class="main-button">DISCOVER</button>
+  </a>
+
+  <hr>
+
+  <p class="footer">est. 2026</p>
+
+  <!-- MUSIC PLAYER -->
+  <audio id="bgm" loop>
+    <source src="bgm.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="music-bar" onclick="toggleMusic()">
+    <span id="music-label">♪ PLAY MUSIC</span>
+  </div>
+
+  <script>
+    const audio = document.getElementById('bgm');
+    let playing = false;
+
+    function toggleMusic() {
+      if (playing) {
+        audio.pause();
+        document.getElementById('music-label').textContent = '♪ PLAY MUSIC';
+        playing = false;
+      } else {
+        audio.play();
+        document.getElementById('music-label').textContent = '♫ PAUSE MUSIC';
+        playing = true;
+      }
+    }
+  </script>
+
+</body>
+</html>
