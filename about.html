@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>about us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Tenor+Sans&display=swap" rel="stylesheet">
+  <style>
+    body { background-color: #f7dde3; font-family: 'Cormorant Garamond', serif; text-align: center; padding-top: 80px; margin: 0; }
+    h1 { color: #5c4a4a; font-weight: 300; letter-spacing: 8px; font-size: 36px; }
+    .subtitle { color: #8a7373; font-style: italic; font-size: 16px; letter-spacing: 2px; }
+    hr { width: 15%; border: none; border-top: 1px solid #d8b8c0; margin: 30px auto; }
+    .nav { display: flex; justify-content: center; gap: 40px; margin: 30px auto; }
+    .nav a { color: #8a7373; text-decoration: none; font-family: 'Tenor Sans', sans-serif; font-size: 11px; letter-spacing: 3px; transition: color 0.3s ease; }
+    .nav a:hover { color: #5c4a4a; }
+    .profile-container { display: flex; justify-content: center; gap: 80px; margin: 60px auto; flex-wrap: wrap; padding: 0 40px; }
+    .profile { max-width: 280px; text-align: center; }
+    .profile-initial { width: 100px; height: 100px; border-radius: 50%; background-color: #d8b8c0; color: #5c4a4a; font-size: 36px; font-weight: 300; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; letter-spacing: 2px; }
+    .profile-name { color: #5c4a4a; font-size: 20px; letter-spacing: 4px; font-weight: 300; margin-bottom: 8px; }
+    .profile-text { color: #8a7373; font-style: italic; font-size: 15px; line-height: 2; margin-top: 16px; }
+    .music-bar { position: fixed; bottom: 20px; right: 20px; background-color: #fdf0f3; border: 1px solid #d8b8c0; padding: 10px 20px; font-family: 'Tenor Sans', sans-serif; font-size: 11px; letter-spacing: 2px; color: #5c4a4a; cursor: pointer; transition: all 0.3s ease; }
+    .music-bar:hover { background-color: #5c4a4a; color: #fdf0f3; }
+  </style>
+</head>
+<body>
+
+  <h1>ABOUT US</h1>
+  <p class="subtitle">the people behind the nook</p>
+
+  <nav class="nav">
+    <a href="index.html">HOME</a>
+    <a href="page 2 for reading nook.html">BOOKS</a>
+    <a href="community-reviews.html">COMMUNITY</a>
+  </nav>
+
+  <hr>
+
+  <p style="color: #8a7373; font-style: italic; font-size: 16px; max-width: 600px; margin: 40px auto; line-height: 2; padding: 0 40px;">
+    welcome to the reading nook — built by two friends who love books a little too much and wanted a place to share that love with the world.
+  </p>
+
+  <hr>
+
+  <div class="profile-container">
+
+    <div class="profile">
+      <div class="profile-initial">K</div>
+      <p class="profile-name">KAAVYA SINGH</p>
+      <hr style="width: 30%; border: none; border-top: 1px solid #d8b8c0; margin: 16px auto;">
+      <p class="profile-text">
+        a lover of mysteries, slow burns and books that keep you up way past your bedtime. kaavya is the one most likely to finish an entire series in a weekend and immediately need to talk about it with someone.
+      </p>
+    </div>
+
+    <div class="profile">
+      <div class="profile-initial">R</div>
+      <p class="profile-name">RENEE DHUPER</p>
+      <hr style="width: 30%; border: none; border-top: 1px solid #d8b8c0; margin: 16px auto;">
+      <p class="profile-text">
+        drawn to emotional, character driven stories that leave a mark long after the last page. renee is the one who will cry at a book and then immediately recommend it to everyone she knows.
+      </p>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <p style="color: #a98e8e; font-size: 12px; letter-spacing: 2px; font-family: 'Tenor Sans', sans-serif;">est. 2026</p>
+
+  <audio id="bgm" loop><source src="bgm.mp3" type="audio/mpeg"></audio>
+  <div class="music-bar" onclick="toggleMusic()"><span id="music-label">♪ PLAY MUSIC</span></div>
+  <script>
+    const audio = document.getElementById('bgm'); let playing = false;
+    function toggleMusic() { if (playing) { audio.pause(); document.getElementById('music-label').textContent = '♪ PLAY MUSIC'; playing = false; } else { audio.play(); document.getElementById('music-label').textContent = '♫ PAUSE MUSIC'; playing = true; } }
+  </script>
+
+</body>
+</html>
