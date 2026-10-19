@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ikigai - personal thoughts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Tenor+Sans&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #f5e6a8; font-family: 'Cormorant Garamond', serif; text-align: center; padding-top: 80px;">
+  <h1 style="color: #5c5440; font-weight: 300; letter-spacing: 4px; font-size: 28px;">IKIGAI</h1>
+  <p style="color: #8a7a50; font-style: italic; font-size: 14px;">nonfiction · personal thoughts</p>
+  <hr style="width: 15%; border: none; border-top: 1px solid #c9b97a; margin: 30px auto;">
+  <p style="color: #5c5440; font-size: 18px; max-width: 600px; margin: 40px auto; line-height: 2; padding: 0 40px;">
+    personal thoughts coming soon!
+  </p>
+  <hr style="width: 15%; border: none; border-top: 1px solid #c9b97a; margin: 50px auto 20px;">
+  <a href="ikigai.html" style="text-decoration: none; color: #5c5440; font-family: 'Tenor Sans', sans-serif; font-size: 11px; letter-spacing: 2px;">← BACK</a>
+  <audio id="bgm" loop><source src="bgm.mp3" type="audio/mpeg"></audio>
+  <div style="position: fixed; bottom: 20px; right: 20px; background-color: #fdf5e0; border: 1px solid #c9b97a; padding: 10px 20px; font-family: 'Tenor Sans', sans-serif; font-size: 11px; letter-spacing: 2px; color: #5c5440; cursor: pointer;" onclick="toggleMusic()">
+    <span id="music-label">♪ PLAY MUSIC</span>
+  </div>
+  <script>
+    const audio = document.getElementById('bgm'); let playing = false;
+    function toggleMusic() { if (playing) { audio.pause(); document.getElementById('music-label').textContent = '♪ PLAY MUSIC'; playing = false; } else { audio.play(); document.getElementById('music-label').textContent = '♫ PAUSE MUSIC'; playing = true; } }
+  </script>
+</body>
+</html>
