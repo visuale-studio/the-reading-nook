@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>you'll be the death of me - review</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Tenor+Sans&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #d4edda; font-family: 'Cormorant Garamond', serif; text-align: center; padding-top: 80px;">
+  <h1 style="color: #4a5c4a; font-weight: 300; letter-spacing: 4px; font-size: 28px;">YOU'LL BE THE DEATH OF ME</h1>
+  <p style="color: #6b8c6b; font-style: italic; font-size: 14px;">mystery / crime · review</p>
+  <hr style="width: 15%; border: none; border-top: 1px solid #a8c8a8; margin: 30px auto;">
+  <p style="color: #4a5c4a; font-size: 18px; max-width: 600px; margin: 40px auto; line-height: 2; padding: 0 40px;">
+    you'll be the death of me follows three former best friends, ivy, mateo and cal, who were inseparable in middle school but slowly drifted apart as they grew into high school. when the three find themselves wishing for the simplicity of the past, they decide to recreate their legendary "best day ever" by skipping school for one more perfect day together. but the day goes wrong in the worst possible way when they stumble into the murder of a fellow classmate, someone who happened to be in a recent feud with one of them. suddenly the friends are suspects, and they have to work together to clear their names before the truth buries them. as the investigation deepens, long-hidden secrets surface, alibis begin to crumble and every twist sends the case further into chaos, leaving the reader guessing who can be trusted until the very last chapters. karen m. mcmanus delivers a fast, twisty and endlessly bingeable mystery about friendship, secrets and the people we used to be.
+  </p>
+  <hr style="width: 15%; border: none; border-top: 1px solid #a8c8a8; margin: 50px auto 20px;">
+  <a href="youllbethedeath.html" style="text-decoration: none; color: #4a5c4a; font-family: 'Tenor Sans', sans-serif; font-size: 11px; letter-spacing: 2px;">← BACK</a>
+  <audio id="bgm" loop><source src="bgm.mp3" type="audio/mpeg"></audio>
+  <div style="position: fixed; bottom: 20px; right: 20px; background-color: #f0faf0; border: 1px solid #a8c8a8; padding: 10px 20px; font-family: 'Tenor Sans', sans-serif; font-size: 11px; letter-spacing: 2px; color: #4a5c4a; cursor: pointer;" onclick="toggleMusic()"><span id="music-label">♪ PLAY MUSIC</span></div>
+  <script>
+    const audio = document.getElementById('bgm'); let playing = false;
+    function toggleMusic() { if (playing) { audio.pause(); document.getElementById('music-label').textContent = '♪ PLAY MUSIC'; playing = false; } else { audio.play(); document.getElementById('music-label').textContent = '♫ PAUSE MUSIC'; playing = true; } }
+  </script>
+</body>
+</html>
